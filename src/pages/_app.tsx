@@ -1,8 +1,12 @@
 import type { AppProps } from 'next/app';
+import 'sanitize.css';
+import Layout from 'src/components/layout';
 import 'highlight.js/styles/github.css';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
+const App = ({ Component, pageProps }: AppProps) => (
+  <Layout>
+    <Component {...pageProps} />
+  </Layout>
+);
 
-export default MyApp;
+export default App;
