@@ -3,10 +3,6 @@ import styled from '@emotion/styled';
 import { DeepReadonly } from 'utility-types';
 import { getAllDocuments, getDocument } from 'src/lib/source';
 import { markdownToHtml } from 'src/lib/markdown';
-import hljs from 'highlight.js/lib/core';
-import javascript from 'highlight.js/lib/languages/javascript';
-import 'highlight.js/styles/github.css';
-import marked from 'marked';
 
 type ContextProps = DeepReadonly<Pick<site.document.Props, 'slug'>>;
 type StaticProps = DeepReadonly<site.document.Props & { html: string }>;
@@ -58,5 +54,3 @@ const Container: NextPage<StaticProps> = (props) => {
 };
 
 export default Container;
-
-export const config: PageConfig = { amp: true };

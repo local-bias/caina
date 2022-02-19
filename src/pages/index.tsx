@@ -39,5 +39,3 @@ const Container: NextPage<Props> = (props) => {
 };
 
 export default Container;
-
-export const config: PageConfig = { amp: true };
