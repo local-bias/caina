@@ -1,14 +1,14 @@
-import { FCX } from 'react';
+import { FC } from 'react';
 
-import GlobalStyle from './global-style';
+import Header from './header';
+import Footer from './footer';
 
-const Component: FCX = ({ children, className }) => (
-  <>
-    <GlobalStyle />
-    <div {...{ className }}>
-      <main>{children}</main>
-    </div>
-  </>
+const Component: FC = ({ children }) => (
+  <div id='grid'>
+    <Header />
+    <main>{children}</main>
+    <Footer />
+  </div>
 );
 
 export default Component;
