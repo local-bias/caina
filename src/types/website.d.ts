@@ -5,6 +5,6 @@ namespace site {
       date: string;
     };
 
-    type Props = Partial<Frontmatter> & { slug: string; content: string };
+    type Props = Partial<Frontmatter> & { slug: string[]; filename: string; content: string };
   }
 }

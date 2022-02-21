@@ -5,21 +5,21 @@ import styled from '@emotion/styled';
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 export const getStaticProps = async () => {
-  const allPosts = getAllDocuments();
+  const documents = getAllDocuments();
 
   return {
-    props: { allPosts },
+    props: { documents },
   };
 };
 
-const Component: NextPageWithStyle<Props> = ({ className, allPosts }) => (
+const Component: NextPageWithStyle<Props> = ({ className, documents }) => (
   <div {...{ className }}>
     <h1>Next.js Playground</h1>
     <h1>記事一覧</h1>
-    {allPosts.map((post, i) => (
-      <a key={i} href={`/doc/${post.slug}`}>
-        <h2>{post.title}</h2>
-        <p>{post.date}</p>
+    {documents.map((document, i) => (
+      <a key={i} href={`/doc/${document.slug.join('/')}`}>
+        <h2>{document.title}</h2>
+        <small>{document.date}</small>
       </a>
     ))}
   </div>
